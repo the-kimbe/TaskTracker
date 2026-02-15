@@ -25,7 +25,7 @@ export default function CustomDrawer(props) {
         }
         props.navigation.closeDrawer();
       }}
-      className="flex-row items-center px-6 py-4 mx-4 mb-2 rounded-[25px] active:bg-slate-50"
+      className="flex-row items-start px-6 py-4 mb-2 rounded-[2px] active:bg-slate-50"
     >
       <Icon name={icon} size={22} color="#64748b" />
       <Text className="text-base font-bold ml-4 text-slate-600">{label}</Text>
@@ -37,7 +37,7 @@ export default function CustomDrawer(props) {
     <View className="flex-1 bg-white mt-10">
       <DrawerContentScrollView {...props} contentContainerStyle={{ paddingTop: 0 }}>
         {/* Profile Header */}
-        <View className="p-10 items-center">
+        <View className="p-6 items-center">
           <View className="h-28 w-28 bg-white rounded-xl items-center justify-center mb-5 shadow-2xl shadow-indigo-200 border border-slate-100">
             <View className="h-36 w-36 p-4 bg-indigo-600 rounded-xl items-center justify-center">
               <Icon name="user" color="white" size={45} />
@@ -53,8 +53,8 @@ export default function CustomDrawer(props) {
         </View>
 
         {/* Navigation Links */}
-        <View className="pt-2 px-2">
-          <Text className="text-slate-400 font-black text-[10px] uppercase tracking-[3px] ml-8 mb-4">
+        <View className="pt-2 ">
+          <Text className="text-slate-400 font-black text-[10px] uppercase tracking-[3px] ml-3 mb-4">
             Menu
           </Text>
 
