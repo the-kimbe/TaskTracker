@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, Switch, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Switch,  } from 'react-native';
 import Icon from '@react-native-vector-icons/lucide';
+import Header from '../../components/Header';
 
 export default function Settings({ navigation }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -34,10 +35,11 @@ export default function Settings({ navigation }) {
 
   return (
     <View className="flex-1 bg-slate-50">
+        <Header navigation={navigation}/>
       <ScrollView showsVerticalScrollIndicator={false} className="px-6">
         
         {/* Header Section */}
-        <View className="mt-10 mb-8">
+        <View className="mt-4 mb-8">
           <Text className="text-3xl font-black text-slate-900 tracking-tight">Settings</Text>
           <Text className="text-slate-400 font-medium mt-1">Customize your planner experience</Text>
         </View>

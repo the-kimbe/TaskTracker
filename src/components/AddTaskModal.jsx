@@ -104,7 +104,7 @@ export default function AddTaskModal({ visible, onClose, onAddTask }) {
                                 onPress={() => setStatus('complete')}
                                 className={`flex-1 flex-row items-center justify-center py-4 rounded-2xl border-2 ${status === 'complete' ? 'bg-emerald-50 border-emerald-500' : 'bg-white border-slate-100'}`}
                             >
-                                <Icon name="check-circle" size={18} color={status === 'complete' ? '#10b981' : '#94a3b8'} />
+                                <Icon name="circle-check" size={18} color={status === 'complete' ? '#10b981' : '#94a3b8'} />
                                 <Text className={`ml-2 font-bold ${status === 'complete' ? 'text-emerald-600' : 'text-slate-400'}`}>Complete</Text>
                             </TouchableOpacity>
                         </View>

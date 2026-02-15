@@ -38,7 +38,7 @@ export default function LandingPage({ navigation }) {
           </Text>
           
           {/* Feature List */}
-          <View className="mt-8 space-y-3">
+          <View className="mt-8 space-y-3 gap-3">
             <View className="flex-row items-center">
               <View className="bg-emerald-100 p-1 rounded-full">
                 <Icon name="check" size={16} color="#10b981" />

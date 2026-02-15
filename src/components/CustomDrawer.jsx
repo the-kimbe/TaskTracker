@@ -13,22 +13,25 @@ export default function CustomDrawer(props) {
     await logout();
   };
 
-  // UPDATED: navigate to bottom tabs screens
-  const DrawerItem = ({ icon, label, tab }) => (
+  const DrawerItem = ({ icon, label, tab, drawerScreen }) => (
     <TouchableOpacity
       onPress={() => {
-        // Navigate to BottomTabNavigator tab inside DrawerNavigator
-        props.navigation.navigate('MainTabs', {  // Drawer.Screen that contains BottomTabNavigator
-          screen: tab,                            // tab inside BottomTabNavigator
-        });
+        if (tab) {
+          // Navigate to a tab inside BottomTabNavigator
+          props.navigation.navigate('MainTabs', { screen: tab });
+        } else if (drawerScreen) {
+          // Navigate to a direct drawer screen
+          props.navigation.navigate(drawerScreen);
+        }
         props.navigation.closeDrawer();
       }}
-      className={`flex-row items-center px-6 py-4 mx-4 mb-2 rounded-[25px] active:bg-slate-50`}
+      className="flex-row items-center px-6 py-4 mx-4 mb-2 rounded-[25px] active:bg-slate-50"
     >
       <Icon name={icon} size={22} color="#64748b" />
       <Text className="text-base font-bold ml-4 text-slate-600">{label}</Text>
     </TouchableOpacity>
   );
+
 
   return (
     <View className="flex-1 bg-white mt-10">
@@ -55,21 +58,15 @@ export default function CustomDrawer(props) {
             Menu
           </Text>
 
-          <DrawerItem icon="layout-dashboard" label="Home" tab="Dashboard" />
+          <DrawerItem icon="house" label="Home" tab="Dashboard" />
           <DrawerItem icon="list-todo" label="My Tasks" tab="Task" />
           <DrawerItem icon="user" label="Profile" tab="Profile" />
+          <DrawerItem icon="settings" label="Settings" drawerScreen="Settings" />
 
-          <View className="h-[1px] bg-slate-100 mx-8 my-6" />
-
-          <Text className="text-slate-400 font-black text-[10px] uppercase tracking-[3px] ml-8 mb-4">
-            Others
-          </Text>
-          <DrawerItem icon="settings" label="Settings" tab="Settings" />
         </View>
       </DrawerContentScrollView>
 
-      {/* Logout Section */}
-      <View className="p-6 border-t border-slate-50">
+      <View className="p-6 border-slate-50">
         <TouchableOpacity
           onPress={() => setModalVisible(true)}
           className="flex-row items-center bg-red-50 p-5 rounded-full active:bg-red-100"
@@ -96,14 +93,14 @@ export default function CustomDrawer(props) {
         >
           <View className="bg-white rounded-[40px] p-8 w-full shadow-2xl items-center">
             <View className="bg-red-50 h-20 w-20 rounded-full items-center justify-center mb-6">
-              <Icon name="alert-circle" color="#ef4444" size={40} />
+              <Icon name="circle-alert" color="#ef4444" size={40} />
             </View>
 
             <Text className="text-2xl font-black text-slate-900 text-center mb-2">
               Logging Out?
             </Text>
             <Text className="text-slate-500 text-center mb-8 font-medium">
-              Sigurado ka na bang gusto mong lumabas sa iyong account?
+              Are you sure you want to log out of your account?
             </Text>
 
             <View className="flex-row gap-3 w-full">
