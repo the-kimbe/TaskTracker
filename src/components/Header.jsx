@@ -1,17 +1,23 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from '@react-native-vector-icons/lucide';
 
-export default function Header() {
-    return (
-        <View className="mb-10 items-center">
-            <View className="h-16 w-16 bg-indigo-600 rounded-2xl items-center justify-center mb-4 shadow-lg">
-                <Text className="text-white text-3xl font-bold">TT</Text>
-            </View>
-            <Text className="text-3xl font-extrabold text-slate-900">TaskTracker</Text>
-            <Text className="text-slate-500 mt-2 text-center">
-                Stay organized. Track your progress from {"\n"}
-                <Text className="text-orange-500 font-semibold">Pending</Text> to <Text className="text-emerald-500 font-semibold">Complete</Text>.
-            </Text>
+export default function Header({ navigation }) {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingTop: 12 }}>
+      
+      <TouchableOpacity onPress={() => navigation?.openDrawer()}>
+        <Icon name="menu" size={28} color="#4f46e5" />
+      </TouchableOpacity>
+
+      <View style={{ flex: 1, alignItems: 'flex-end', justifyContent: 'center' }}>
+        <View style={{ height: 45, width: 45, backgroundColor: '#4f46e5', borderRadius: 12, alignItems: 'center', justifyContent: 'center', marginBottom: 4, elevation: 4 }}>
+          <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>TT</Text>
         </View>
-    )
+      </View>
+
+      {/* Right Placeholder */}
+      <View style={{ width: 32 }} />
+    </View>
+  );
 }

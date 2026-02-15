@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Dashboard from '../home/Dashboard';
 import Icon from '@react-native-vector-icons/lucide';
+import Tasks from '../home/Tasks'
+import Profile from '../home/Profile'
 
 const Tab = createBottomTabNavigator();
 
@@ -25,42 +27,30 @@ export default function BottomTabNavigator() {
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color, size }) => (
-                        <Icon name="layout-dashboard" color={color} size={size} />
+                        <Icon name="house" color={color} size={size} />
                     ),
                 }}
             />
-               <Tab.Screen
-                name="Dash"
-                component={Dashboard}
+            <Tab.Screen
+                name="Task"
+                component={Tasks}
                 options={{
-                    tabBarLabel: 'Dash',
+                    tabBarLabel: 'Task',
                     tabBarIcon: ({ color, size }) => (
-                        <Icon name="layout-dashboard" color={color} size={size} />
+                        <Icon name="list-todo" color={color} size={size} />
                     ),
                 }}
             />
-            {/* <Tab.Screen
-        name="Tasks"
-        component={Profile} // Pansamantala, palitan mo nalang ng TasksStack pag ready na
-        options={{
-          tabBarLabel: 'Tasks',
-          tabBarIcon: ({ color, size }) => (
-            <ListTodo color={color} size={size} strokeWidth={2} />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <User color={color} size={size} strokeWidth={2} />
-          ),
-        }}
-      /> */}
-
+            <Tab.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="user" color={color} size={size} />
+                    ),
+                }}
+            />
 
         </Tab.Navigator>
     );

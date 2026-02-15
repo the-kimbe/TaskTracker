@@ -16,9 +16,12 @@ export const getUser = async () => {
     return user ? JSON.parse(user) : null;
   } catch (e) {
     console.log('Error getting user', e);
+    return null;
   }
 };
 
-export const removeUser = async () => {
-  await AsyncStorage.removeItem(USER_KEY);
+// Instead of deleting, we keep the registered user
+// Logout just clears the in-memory user state
+export const clearUserState = async () => {
+  // For now, do nothing here
 };
