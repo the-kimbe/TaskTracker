@@ -36,7 +36,7 @@ export default function Tasks({ navigation }) {
     };
 
     const renderTask = ({ item }) => (
-        <View className="bg-white p-3 rounded-[50px] mb-4 shadow-md border border-slate-100 flex-col">
+        <View className="bg-white p-3 rounded-[20px] mb-4 shadow-md border border-slate-100 flex-col">
 
             {/* Top Row: Status Icon and Edit Button */}
             <View className="flex-row justify-between items-center mb-2">
@@ -70,7 +70,7 @@ export default function Tasks({ navigation }) {
             {/* Bottom Section: Status Button (Full Width) */}
             <TouchableOpacity
                 activeOpacity={0.8}
-                className={`w-full py-2 rounded-3xl items-center justify-center ${item.status === 'complete' ? 'bg-emerald-600' : 'bg-orange-600'
+                className={`w-full py-2 rounded-3xl items-center justify-center ${item.status === 'complete' ? 'bg-white' : 'bg-white'
                     }`}
             >
                 <Text className={`font-bold text-base capitalize ${item.status === 'complete' ? 'text-emerald-600' : 'text-orange-600'

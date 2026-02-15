@@ -34,7 +34,7 @@ export default function Profile({ navigation }) {
 
         {/* Header Section - Modern Rounded Style */}
         <View className="items-center mt-12 mb-8">
-          <View className="h-40 w-40 rounded-[60px] bg-white items-center justify-center shadow-2xl shadow-indigo-200 border border-slate-100">
+          <View className="h-40 w-40 rounded-[20px] items-center justify-center shadow-2xl shadow-indigo-200 border border-slate-100">
             {/* Binigyan natin ng malaking background yung icon */}
             <View className="h-32 w-32 rounded-xl bg-indigo-600 items-center justify-center shadow-lg shadow-indigo-400">
               <Icon name="user" size={64} color="white" strokeWidth={1.5} />
@@ -54,11 +54,11 @@ export default function Profile({ navigation }) {
 
         {/* Stats Section */}
         <View className="flex-row gap-4 mb-10">
-          <View className="flex-1 bg-indigo-600 p-6 rounded-[40px] items-center shadow-xl shadow-indigo-300">
+          <View className="flex-1 bg-indigo-600 p-6 rounded-[20px] items-center shadow-xl shadow-indigo-300">
             <Text className="text-white font-black text-3xl">{completedTasks}</Text>
             <Text className="text-indigo-100 font-bold text-[10px] uppercase mt-1">Complete</Text>
           </View>
-          <View className="flex-1 bg-white p-6 rounded-[40px] items-center border border-slate-100 shadow-sm">
+          <View className="flex-1 bg-white p-6 rounded-[20px] items-center border border-slate-100 shadow-sm">
             <Text className="text-slate-900 font-black text-3xl">{pendingTasks}</Text>
             <Text className="text-slate-400 font-bold text-[10px] uppercase mt-1">Pending</Text>
           </View>
